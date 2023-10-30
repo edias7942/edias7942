@@ -54,6 +54,13 @@
     width: 20%;
 }
 
+#circlesProtection {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: 3;
+}
+
 .circle {
     animation: circleAppearing 1s ease-out;
     align-items: center;

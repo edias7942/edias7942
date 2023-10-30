@@ -2,6 +2,10 @@ let title = document.getElementById("container3Title");
 let subtitle = document.getElementById("container3Subtitle");
 let paragraph = document.getElementById("container3Paragraph");
 let changePageTransitionDiv = document.getElementById("changingPageTransition");
+let circlesProtection = document.getElementById("circlesProtection");
+let modifyText = true
+
+// Seleção dos Círculos de Navegação
 let circles = [
     "",
     document.getElementById("circle1"),
@@ -9,10 +13,8 @@ let circles = [
     document.getElementById("circle3"),
 ];
 
-let iniciado = false
-
 setInterval(() => {
-    iniciado = true
+    circlesProtection.style.display = 'none'
 }, 1600);
 
 let content = [
@@ -45,7 +47,7 @@ let content = [
 ];
 
 function hoverInitialImages(image) {
-    if (!iniciado) return
+    if (!modifyText) return
     title.innerHTML = content[image].title;
     paragraph.innerHTML = content[image].text;
     // title.style.animation = "none"
@@ -58,6 +60,9 @@ function hoverInitialImages(image) {
 
 function clickInitialImages(image) {
     // RETIRANDO TEXTO DA DIREITA
+    modifyText = false
+    circlesProtection.style.display = 'inherit'
+    circles[image].style.filter = 'none'
     title.style.animation =
         "text-pop-up-top 500ms cubic-bezier(0.250, 0.460, 0.450, 0.940) both";
     subtitle.style.animation =
