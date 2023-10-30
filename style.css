@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Agbalumo&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+:root {
+    --font-family-primary: 'Agbalumo', serif;
+    --font-family-secundary: 'Montserrat', sans-serif;
+}
+
+/* CONFIGURAÇÕES INICIAIS */
+
+* {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    
+}
+
+/* PÁGINA INICIAL */
+
+.section1 {
+    background: linear-gradient(180deg, #0020f0 0%, rgb(0, 22, 163) 100%);
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.container2 {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 20%;
+}
+
+.circle {
+    align-items: center;
+    border-radius: 50%;
+    box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.492);
+    cursor: pointer;
+    display: flex;
+    filter: saturate(0);
+    justify-content: center;
+    height: 120px;
+    transition: 300ms ease-out;
+    width: 120px;
+}
+
+.circle:hover {
+    box-shadow: -5px 15px 15px rgba(0, 0, 0, 0.345);
+    filter: saturate(1);
+}
+
+#circle1:hover {
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+#circle2,
+#circle3 {
+    margin-top: -10px;
+}
+
+#circle2:hover,
+#circle3:hover {
+    margin-top: -20px;
+    margin-bottom: 10px;
+}
+
+.innerCircle {
+    background-color: rgb(195, 195, 195);
+    border: 2px solid #fff;
+    border-radius: 50%;
+    height: 120px;
+    position: absolute;
+    width: 120px;
+    z-index: 1;
+}
+
+.label {
+    align-items: center;
+    background-color: rgb(188, 217, 255);
+    border: 2px solid #fff;
+    border-radius: 5px;
+    box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.492);
+    color: #031483;
+    display: flex;
+    font-family: var(--font-family-primary), serif;
+    font-weight: 900;
+    justify-content: center;
+    height: 40px;
+    opacity: 0;
+    position: absolute;
+    padding: 1px 5px 1px 20px;
+    transition: 300ms ease-out;
+    width: 120px;
+    z-index: 0;
+}
+
+.circle:hover .label {
+    box-shadow: -5px 12px 15px rgba(0, 0, 0, 0.345);
+    opacity: 1;
+    margin-left: 230px;
+    width: 120px;
+}
+
+.container3 {
+    background: url(./set-of-programers.svg) local;
+    align-items: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    /* font-family: var(--font-family-primary), serif; */
+    font-family: monospace;
+    height: 100vh;
+    justify-content: center;
+    transition: 300ms;
+    width: 60%;
+    z-index: 2;
+}
+
+#container3Title {
+    font-size: 56px;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+#container3Subtitle {
+    color: rgb(220, 220, 220);
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+#container3Paragraph {
+    color: #d3d3d3;
+    /* font-family: var(--font-family-secundary); */
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-align: center;
+}
