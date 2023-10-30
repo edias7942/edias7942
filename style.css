@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Agbalumo&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300;400;500;600;700&display=swap");
 
 :root {
-    --font-family-primary: 'Agbalumo', serif;
-    --font-family-secundary: 'Montserrat', sans-serif;
+    --font-family-primary: "Agbalumo", serif;
+    --font-family-secundary: "Montserrat", sans-serif;
 }
 
 /* CONFIGURAÇÕES INICIAIS */
@@ -11,14 +11,35 @@
     margin: 0;
     padding: 0;
     user-select: none;
-    
 }
 
 /* PÁGINA INICIAL */
 
+#changingPageTransition {
+    background-color: white;
+    border-radius: 50%;
+    overflow-x: hidden;
+    top: -1000px;
+    left: -1000px;
+    position: absolute;
+    z-index: 3;
+}
+
+@keyframes changingPage {
+    50% {
+        height: 0;
+        width: 0;
+    }
+    100% {
+        height: 3000px;
+        width: 3000px;
+    }
+}
+
 .section1 {
     background: linear-gradient(180deg, #0020f0 0%, rgb(0, 22, 163) 100%);
     display: flex;
+    gap: 100px;
     justify-content: center;
     height: 100vh;
     width: 100vw;
@@ -34,6 +55,7 @@
 }
 
 .circle {
+    animation: circleAppearing 1s ease-out;
     align-items: center;
     border-radius: 50%;
     box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.492);
@@ -44,6 +66,25 @@
     height: 120px;
     transition: 300ms ease-out;
     width: 120px;
+}
+
+@keyframes circleDisappearing {
+    50% {
+        opacity: 1;
+        transform: scale(0.2);
+    }
+    100% {
+        transform: translateX(-500px) scale(0.2);
+        opacity: 0;
+    }
+}
+
+@keyframes circleAppearing {
+    from {
+        margin-left: -100px;
+        opacity: 0;
+        filter: blur(0.5);
+    }
 }
 
 .circle:hover {
@@ -106,11 +147,9 @@
 
 .container3 {
     background: url(./set-of-programers.svg) local;
-    align-items: center;
     color: white;
     display: flex;
     flex-direction: column;
-    /* font-family: var(--font-family-primary), serif; */
     font-family: monospace;
     height: 100vh;
     justify-content: center;
@@ -120,9 +159,30 @@
 }
 
 #container3Title {
+    border-right: 4px solid;
     font-size: 56px;
-    letter-spacing: 3px;
-    text-align: center;
+    width: 27ch;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 1.6s steps(27), blinking 0.5s infinite step-end alternate;
+}
+
+#container3Title.minWidth {
+    border-right: 4px solid;
+    padding-right: 10px;
+    width: min-content;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+}
+
+@keyframes blinking {
+    50% {
+        border-color: transparent;
+    }
 }
 
 #container3Subtitle {
@@ -136,5 +196,5 @@
     /* font-family: var(--font-family-secundary); */
     font-size: 1.3rem;
     font-weight: 700;
-    text-align: center;
+    /* text-align: center; */
 }

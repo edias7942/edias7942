@@ -4,11 +4,19 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Emerson Machado</title>
+
+        <!-- ANIMISTA CSS -->
+        <link rel="stylesheet" href="animista.css" />
+
+        <!-- CSS -->
         <link rel="stylesheet" href="style.css" />
-        <script src="script.js"></script>
+
+        <!-- SCRIPT -->
+        <script src="script.js" defer></script>
     </head>
 
     <body>
+        <div id="changingPageTransition"></div>
         <div class="section1">
             <div class="container2">
                 <div
@@ -16,6 +24,7 @@
                     id="circle1"
                     onmouseenter="hoverInitialImages(1)"
                     onmouseleave="hoverInitialImages(0)"
+                    onclick="clickInitialImages(1)"
                 >
                     <img src="image1.jpg" class="innerCircle" alt="" />
                     <div class="label">Quem sou eu?</div>
@@ -25,6 +34,7 @@
                     id="circle2"
                     onmouseenter="hoverInitialImages(2)"
                     onmouseleave="hoverInitialImages(0)"
+                    onclick="clickInitialImages(2)"
                 >
                     <img
                         src="https://img.freepik.com/free-vector/programmer-concept-idea-coding-testing-writing-program-using-internet-different-software-website-development-optimization-isolated-vector-illustration_613284-1392.jpg?w=740&t=st=1698595881~exp=1698596481~hmac=e96fb0b04bebdc5acbae41a0ae5278f8c400b4886471ca2d6e55a9965b678532"
@@ -38,6 +48,7 @@
                     id="circle3"
                     onmouseenter="hoverInitialImages(3)"
                     onmouseleave="hoverInitialImages(0)"
+                    onclick="clickInitialImages(3)"
                 >
                     <img
                         class="innerCircle"
